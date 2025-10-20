@@ -34,8 +34,6 @@ function addButton() {
     });
 }
 
-
-
 function getQuestionAndAnswer(){
     const question = document.querySelectorAll('a[href*="/problems/"]')[4].innerText;
     const description = document.querySelector('div[data-track-load="description_content"]').innerText;

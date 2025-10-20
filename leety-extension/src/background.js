@@ -9,9 +9,7 @@ const systemPrompt = `You are an expert coding tutor specialized in algorithms, 
    - Ask clarifying questions if the problem statement or user code is unclear. 
    - If uncertain, say that you are unable to anwer the question.
 Your ultimate goal is to help the user learn, debug, and solve coding problems effectively, while fostering independent problem-solving skills.
-`
-
-// This function now requires the API key to be passed in.
+`;
 async function getGeminiResponse(apiKey, data, userPrompt) {
   const url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent";
 

@@ -1,12 +1,12 @@
 {
     "manifest_version": 3,
-    "name": "Leetly",
+    "name": "Leety",
     "version": "1.0",
     "description": "ADD DESCRIPTION HERE QUICKLY",
     "host_permissions": ["https://leetcode.com/*"],
     "permissions": ["activeTab", "scripting", "sidePanel", "tabs", "storage"],
     "side_panel": {
-        "default_path": "sidepanel.html"
+        "default_path": "index.html"
     },
     "background": {
         "service_worker": "background.js"
