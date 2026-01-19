@@ -66,6 +66,15 @@ Leety requires a **Google Gemini API key**.
 - **Markdown Rendering:** `react-markdown`
 - **Syntax Highlighting:** `react-syntax-highlighter`
 
+![Leety Extension Demo](leety-extension/src/assets/leetyDemo3.gif)
+
+
+
+
+
+
+
+
 ---
 ## License
 >You can check out the full license [here](https://github.com/fullstacksam23/Leety/blob/main/LICENSE)
