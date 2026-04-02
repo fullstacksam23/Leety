@@ -13,7 +13,7 @@ Rules:
 Respond in concise, well-structured Markdown using headings, bullet points, and code blocks.
 `;
 export async function getGeminiResponse(apiKey, data, userPrompt) {
-  const url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent";
+  const url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent";
 
     const combinedPrompt = `
     Here is the LeetCode problem:

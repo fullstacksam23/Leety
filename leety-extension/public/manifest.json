@@ -2,7 +2,7 @@
     "manifest_version": 3,
     "name": "Leety",
     "version": "1.0",
-    "description": "ADD DESCRIPTION HERE QUICKLY",
+    "description": "An AI coding tutor that guides you through LeetCode problems with hints, explanations, and debugging help.",
     "host_permissions": ["https://leetcode.com/*"],
     "permissions": ["activeTab", "scripting", "sidePanel", "tabs", "storage"],
 

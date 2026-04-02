@@ -1,7 +1,9 @@
 # Leety
 
 **Leety** is an AI-powered, chat-based Chrome extension that acts as a coding tutor for LeetCode problems.  
-It helps you **understand, debug, and improve your solutions step by step**.
+It helps you **understand, debug, and improve your solutions step by step** through interactive guidance and explanations.  
+
+Leety **automatically pulls the problem statement and your code directly from the LeetCode page**, so there’s **no need to copy-paste questions or solutions**—letting you focus entirely on learning and problem-solving.
 
 
 ---
