@@ -3,7 +3,7 @@ import { SpinnerDiamond } from "spinners-react";
 import { getGeminiResponse } from "./api/gemini";
 import Message from "./components/Message";
 import PromptPresets from "./components/PromptPreset";
-
+import ApiKeyModal from "./components/ApiKeyModal";
 
 export default function App() {
   const [messages, setMessages] = useState([]);
@@ -11,6 +11,8 @@ export default function App() {
   const [loading, setLoading] = useState(false);
   const chatRef = useRef(null);
   const [showPresets, setShowPresets] = useState(true);
+  const [showApiKeyModal, setShowApiKeyModal] = useState(false);
+
 
   useEffect(() => {
     chatRef.current?.scrollTo({
@@ -24,7 +26,7 @@ const sendMessage = async (customPrompt) => {
 
   if (!finalPrompt.trim() || loading) return;
 
-  setShowPresets(false); // 👈 hide presets permanently
+  setShowPresets(false); // hide presets permanently
 
   setInput("");
   setMessages((m) => [...m, { sender: "user", text: finalPrompt }]);
@@ -37,16 +39,27 @@ const sendMessage = async (customPrompt) => {
         else resolve(res);
       });
     });
+    let text;
 
+    if(pageResponse?.error === "ApiKeyMissing"){
+      text = "Please add your API Key first";
+      setShowApiKeyModal(true);
+      setLoading(false);
+      return;
+
+    }
+    else{
     const gemini = await getGeminiResponse(
       pageResponse.apiKey,
       pageResponse.dataResponse.data,
       finalPrompt
     );
 
-    const text =
+    text =
       gemini?.candidates?.[0]?.content?.parts?.[0]?.text ||
       "No response received.";
+    }
+
 
     setMessages((m) => [...m, { sender: "bot", text }]);
   } catch (err) {
@@ -62,6 +75,9 @@ const sendMessage = async (customPrompt) => {
 
   return (
     <div className="flex flex-col h-screen bg-slate-950 text-gray-200">
+          {showApiKeyModal && (
+      <ApiKeyModal onSuccess={() => setShowApiKeyModal(false)} />
+    )}
 <div className="flex flex-1 overflow-hidden">
   {/* Chat area */}
   <div

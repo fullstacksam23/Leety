@@ -92,13 +92,13 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
       //get apiKey from storage
       const { apiKey } = await chrome.storage.local.get(['apiKey']);
       if (!apiKey) {
-        sendResponse({ output: "Error: API Key is not set. Please add your key in the side panel." });
+        sendResponse({ error: "ApiKeyMissing" });
         return;
       }
 
       const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
       if (!tab) {
-        sendResponse({ output: "Error: No active tab found." });
+        sendResponse({ error: "Error: No active tab found." });
         return;
       }
 

@@ -36,7 +36,7 @@ Leety **automatically pulls the problem statement and your code directly from th
 1. Clone the repository:
    ```bash
    git clone https://github.com/your-username/leety.git
-   cd leety
+   cd Leety/leety-extension
 2. Install dependencies:
     `npm install`
 3. Build the extension:
@@ -67,6 +67,15 @@ Leety requires a **Google Gemini API key**.
 - **AI:** Google Gemini API
 - **Markdown Rendering:** `react-markdown`
 - **Syntax Highlighting:** `react-syntax-highlighter`
+
+![Leety Extension Demo](leety-extension/src/assets/leetyDemo3.gif)
+
+
+
+
+
+
+
 
 ---
 ## License
